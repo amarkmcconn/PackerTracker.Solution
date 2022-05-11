@@ -9,6 +9,7 @@ namespace PackerTracker.Models
     public int Weight { get; set; }
     public string Manufacturer { get; set; }
     public bool Purchased { get; set; }
+    public int Id { get; set; }
     private static List<Gear> _instances = new List<Gear> {};
 
     public Gear()
@@ -23,6 +24,7 @@ namespace PackerTracker.Models
       Weight = weight;
       Purchased = purchased;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static List<Gear> GetAll()
@@ -37,12 +39,32 @@ namespace PackerTracker.Models
 
     public void GearPacked()
     {
-      Packed = true;
+      if(Packed == false)
+      {
+        Packed = true;
+      }
+      else
+      {
+        Packed = false;
+      }
     }
 
     public void GearPurchased()
     {
-      Purchased = true;
+      if(Purchased == false)
+      {
+        Purchased = true;
+      }
+      else
+      {
+        Purchased = false;
+      }
+      
+    }
+
+    public static Gear Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }

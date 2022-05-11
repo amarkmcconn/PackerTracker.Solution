@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My To-Do List!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <h2>Add a new piece of gear</h2>
+    <form action="/gear" method="post">
+      <label for="name">Gear name</label>
+      <input id="name" name="name" type="text">
+      <label for="purchased">Purchased?</label>
+      <select id="purchased" name="purchased">
+        <option value="true">Purchased</option>
+        <option value="false">Need to Purchase</option>
+      </select>
+      <label for="packed">Packed?</label>
+      <select id="packed" name="packed">
+        <option value="true">Packed</option>
+        <option value="false">Need to Pack</option>
+      </select>
+      <label for="weight">Gear weight (lbs)</label>
+      <input id="weight" name="weight" type="number">
+      <label for="manufacturer">Gear Brand</label>
+      <input id="manufacturer" name="manufacturer" type="text">
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
