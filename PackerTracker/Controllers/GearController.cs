@@ -66,5 +66,21 @@ namespace PackerTracker.Controllers
       foundGear.GearPacked();
       return RedirectToAction("Show", new { id = id });
     }
+
+    [HttpGet("/gear/pack/gearlist/{id}")]
+    public ActionResult EditPackGearList(int id)
+    {
+      Gear foundGear = Gear.Find(id);
+      foundGear.GearPacked();
+      return RedirectToAction("Index");
+    }
+
+      [HttpGet("/gear/purchase/gearlist/{id}")]
+    public ActionResult EditPurchaseGearList(int id)
+    {
+      Gear foundGear = Gear.Find(id);
+      foundGear.GearPurchased();
+      return RedirectToAction("Index");
+    }
   }
 }
