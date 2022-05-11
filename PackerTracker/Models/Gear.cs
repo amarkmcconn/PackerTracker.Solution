@@ -24,5 +24,25 @@ namespace PackerTracker.Models
       Purchased = purchased;
       _instances.Add(this);
     }
+
+    public static List<Gear> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public void GearPacked()
+    {
+      Packed = true;
+    }
+
+    public void GearPurchased()
+    {
+      Purchased = true;
+    }
   }
 }
