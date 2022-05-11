@@ -15,5 +15,8 @@
     <h2>Packed Status: <a href="/gear/pack/@Model.Id/">@Model.Packed</a></h2>
     <a href='/gear/new'>Add another piece of gear</a>
     <a href='/gear'>View all your gear</a>
+    <form action="/gear/delete/@Model.Id" method="post">
+      <button type="submit" name="button">Delete Item</button>
+    </form>
   </body>
 </html>

@@ -82,5 +82,12 @@ namespace PackerTracker.Controllers
       foundGear.GearPurchased();
       return RedirectToAction("Index");
     }
+    
+    [HttpPost("/gear/delete/{id}")]
+    public ActionResult Delete(int id)
+    {
+      Gear.DeleteGear(id);
+      return RedirectToAction("Index");
+    }
   }
 }

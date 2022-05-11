@@ -64,7 +64,28 @@ namespace PackerTracker.Models
 
     public static Gear Find(int searchId)
     {
-      return _instances[searchId-1];
+      int tempIndex = searchId;
+      for(int i = 0; i<_instances.Count; i++)
+      {
+        if( _instances[i].Id == searchId)
+        {
+          tempIndex = i;
+        }
+      }
+
+      return _instances[tempIndex];
+    }
+
+    public static void DeleteGear(int searchId)
+    {
+      for(int i = 0; i<_instances.Count; i++)
+      {
+        if( _instances[i].Id == searchId)
+        {
+          _instances.RemoveAt(i);
+        }
+      }
+      // _instances.RemoveAt(searchId-1);
     }
   }
 }

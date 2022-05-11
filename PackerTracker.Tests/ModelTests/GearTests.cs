@@ -144,5 +144,27 @@ namespace PackerTracker.Tests
       newGear1.GearPurchased();
       Assert.AreEqual(true, newGear1.Purchased);
     }
+
+    [TestMethod]
+    public void DeleteGear_DeletesSpecificGearFromList_GearList()
+    {
+      string name1 = "chair";
+      bool packed1 = false;
+      int weight1 = 3;
+      string manufacturer1 = "ozark";
+      bool purchased1 = false;
+      Gear newGear1 = new Gear(name1, packed1, manufacturer1, weight1, purchased1);
+      string name2 = "tent";
+      bool packed2 = true;
+      int weight2 = 4;
+      string manufacturer2 = "canvas";
+      bool purchased2 = true;
+      Gear newGear2 = new Gear(name2, packed2, manufacturer2, weight2, purchased2);
+      List<Gear> newList = new List<Gear> { newGear2 };
+      
+      Gear.DeleteGear(newGear1.Id);
+      List<Gear> result = Gear.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
