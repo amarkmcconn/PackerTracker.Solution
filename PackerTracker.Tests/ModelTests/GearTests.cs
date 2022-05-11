@@ -11,8 +11,69 @@ namespace PackerTracker.Tests
     [TestMethod]
     public void GearConstructor_CreatesInstanceOfGear_Gear()
     {
-      // Item newItem = new Item("test");
-      // Assert.AreEqual(typeof(Item), newItem.GetType());
+      Gear newGear = new Gear();
+      Assert.AreEqual(typeof(Gear), newGear.GetType());
+    }
+
+    [TestMethod]
+    public void GearConstructor_ReturnsInstanceOfGearName_Gear()
+    {
+      string name = "chair";
+      bool packed = true;
+      int weight = 3;
+      string manufacturer = "ozark";
+      bool purchased = false;
+      Gear newGear = new Gear(name, packed, manufacturer, weight, purchased);
+      string result = newGear.Name;
+      Assert.AreEqual(name, result);
+    }
+    [TestMethod]
+    public void GearConstructor_ReturnsInstanceOfGearPacked_True()
+    {
+      string name = "chair";
+      bool packed = true;
+      int weight = 3;
+      string manufacturer = "ozark";
+      bool purchased = false;
+      Gear newGear = new Gear(name, packed, manufacturer, weight, purchased);
+      bool result = newGear.Packed;
+      Assert.AreEqual(packed, result);
+    }
+    [TestMethod]
+    public void GearConstructor_ReturnsInstanceOfWeight_Int()
+    {
+      string name = "chair";
+      bool packed = true;
+      int weight = 3;
+      string manufacturer = "ozark";
+      bool purchased = false;
+      Gear newGear = new Gear(name, packed, manufacturer, weight, purchased);
+      int result = newGear.Weight;
+      Assert.AreEqual(weight, result);
+    }
+    [TestMethod]
+    public void GearConstructor_ReturnsInstanceOfGearManufacturer_Manufacturer()
+    {
+      string name = "chair";
+      bool packed = true;
+      int weight = 3;
+      string manufacturer = "ozark";
+      bool purchased = false;
+      Gear newGear = new Gear(name, packed, manufacturer, weight, purchased);
+      string result = newGear.Manufacturer;
+      Assert.AreEqual(manufacturer, result);
+    }
+    [TestMethod]
+    public void GearConstructor_ReturnsInstanceOfGearPurchased_False()
+    {
+      string name = "chair";
+      bool packed = true;
+      int weight = 3;
+      string manufacturer = "ozark";
+      bool purchased = false;
+      Gear newGear = new Gear(name, packed, manufacturer, weight, purchased);
+      bool result = newGear.Purchased;
+      Assert.AreEqual(purchased, result);
     }
   }
 }
