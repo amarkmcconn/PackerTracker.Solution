@@ -52,20 +52,19 @@ namespace PackerTracker.Controllers
     }
     
     [HttpGet("/gear/purchase/{id}")]
-    public ActionResult UpdatePurchase(int id)
+    public ActionResult EditPurchase(int id)
     {
       Gear foundGear = Gear.Find(id);
       foundGear.GearPurchased();
-      return RedirectToAction("Show", foundGear);
+      return RedirectToAction("Show", new { id = id });
     }
 
     [HttpGet("/gear/pack/{id}")]
-    public ActionResult UpdatePacked(int id)
+    public ActionResult EditPack(int id)
     {
       Gear foundGear = Gear.Find(id);
       foundGear.GearPacked();
-      return RedirectToAction("Show", foundGear);
+      return RedirectToAction("Show", new { id = id });
     }
-
   }
 }

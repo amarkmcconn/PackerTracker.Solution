@@ -6,19 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
+    @using PackerTracker.Models;
     <h1>@Model.Name Details: </h1>
     <h2>id: @Model.Id</h2>
-    <h2>Manufacturer:@Model.Manufacturer</h2>
-    <h2>Weight:@Model.Weight</h2>
+    <h2>Manufacturer: @Model.Manufacturer</h2>
+    <h2>Weight: @Model.Weight</h2>
     <h2>Purchase Status: <a href="/gear/purchase/@Model.Id/"> @Model.Purchased</a></h2>
-    <!-- <form action="/gear/@Model.Id/purchase" method="post">
-      <select  id="id" name="id">
-        <option value="@Model.Id">Purchased</option>
-      </select>
-    <button type="submit">update</button> -->
-    <!-- </form> -->
     <h2>Packed Status: <a href="/gear/pack/@Model.Id/">@Model.Packed</a></h2>
-
     <a href='/gear/new'>Add another piece of gear</a>
     <a href='/gear'>View all your gear</a>
   </body>

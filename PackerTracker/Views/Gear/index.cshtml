@@ -4,6 +4,23 @@
     <meta charset="utf-8">
     <title>Packer Tracker</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+  </style>
   </head>
   <body>
     @using PackerTracker.Models;
@@ -13,12 +30,33 @@
     {
       <p>There are is no gear in the list.</p>
     }
-    <ul>
+    <table>
+    <tr>
+      <th>Gear Name</th>
+      <th>Brand</th>
+      <th>Packed?</th>
+      <th>Purchased?<th>
+    </tr>
       @foreach (Gear gear in Model)
       {
-        <li><a href="gear/@gear.Id">@gear.Name</li>
+        string packStatus = " Not Packed";
+        if(@gear.Packed)
+        {
+          packStatus = "Packed";
+        }
+        string purchStatus = "Not Purchased";
+        if(@gear.Purchased)
+        {
+          purchStatus = "Purchased";
+        }
+        <tr>
+          <td><a href="gear/@gear.Id">@gear.Name</a></td>
+          <td>@gear.Manufacturer</td>
+          <td>@packStatus</td>
+          <td>@purchStatus</td>
+        </tr>
       }
-    </ul>
+    </table>
 
     <a href="/gear/new">Add a new item.</a>
 
