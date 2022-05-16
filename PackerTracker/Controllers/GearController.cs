@@ -35,6 +35,7 @@ namespace PackerTracker.Controllers
       }
 
       Gear newGear = new Gear(name, boolPacked, manufacturer, weight, boolPurchased);
+      newGear.Save();
       return RedirectToAction("Index");
     }
 
@@ -56,6 +57,7 @@ namespace PackerTracker.Controllers
     {
       Gear foundGear = Gear.Find(id);
       foundGear.GearPurchased();
+      // foundGear.Save();
       return RedirectToAction("Show", new { id = id });
     }
 
@@ -64,6 +66,7 @@ namespace PackerTracker.Controllers
     {
       Gear foundGear = Gear.Find(id);
       foundGear.GearPacked();
+      // foundGear.Save();
       return RedirectToAction("Show", new { id = id });
     }
 
