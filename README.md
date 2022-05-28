@@ -6,10 +6,12 @@
 
 ## Technologies Used 🖥️
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _C#_
+* _MSTest_
+* _.Net 5.0_
+* _Git_
+* _VsCode_
+* _REPL_
 
 ## Description ✅
 
